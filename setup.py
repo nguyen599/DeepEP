@@ -30,7 +30,7 @@ if __name__ == '__main__':
     else:
         disable_nvshmem = False
 
-    if not os.getenv('NVSHMEM_ENABLE', None):
+    if not int(os.getenv('NVSHMEM_ENABLE', None)):
         disable_nvshmem = True
     if not disable_nvshmem:
         assert os.path.exists(nvshmem_dir), f'The specified NVSHMEM directory does not exist: {nvshmem_dir}'
